@@ -19,7 +19,6 @@ namespace PizzaApp.Pages
 
         public void OnGet()
         {
-
         }
     }
 }

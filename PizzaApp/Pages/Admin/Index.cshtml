@@ -2,18 +2,18 @@
 @model PizzaApp.Pages.Admin.Index
 
 @{
-    Layout = null;
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
-</div>
-</body>
-</html>
+<h1>You must be authentified</h1>
+<br/>
+@if(Model.DisplayInvalidAccountMessage)
+{
+    <div class="alert alert-danger" role="alert">
+        ERROR: Account is not valid
+    </div>
+}
+<form method="post">
+    <input type="text" name="username" placeholder="Login"><br/><br/>
+    <input type="password" name="password" placeholder="Password"><br/><br/>
+    <button>Log in</button>
+</form>

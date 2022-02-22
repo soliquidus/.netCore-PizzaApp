@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,6 +12,7 @@ using PizzaApp.Models;
 
 namespace PizzaApp.Pages.Admin.Pizzas
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly PizzaApp.Data.DataContext _context;
@@ -30,7 +32,7 @@ namespace PizzaApp.Pages.Admin.Pizzas
                 return NotFound();
             }
 
-            Pizza = await _context.Pizzas.FirstOrDefaultAsync(m => m.PizzaID == id);
+            Pizza = await _context.Pizzas.FirstOrDefaultAsync(p => p.PizzaId == id);
 
             if (Pizza == null)
             {
@@ -48,7 +50,7 @@ namespace PizzaApp.Pages.Admin.Pizzas
                 return Page();
             }
 
-            _context.Attach(Pizza).State = EntityState.Modified;
+            _context.Update(Pizza);
 
             try
             {
@@ -56,7 +58,7 @@ namespace PizzaApp.Pages.Admin.Pizzas
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PizzaExists(Pizza.PizzaID))
+                if (!PizzaExists(Pizza.PizzaId))
                 {
                     return NotFound();
                 }
@@ -71,7 +73,7 @@ namespace PizzaApp.Pages.Admin.Pizzas
 
         private bool PizzaExists(int id)
         {
-            return _context.Pizzas.Any(e => e.PizzaID == id);
+            return _context.Pizzas.Any(e => e.PizzaId == id);
         }
     }
 }

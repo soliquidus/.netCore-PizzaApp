@@ -2,11 +2,11 @@
 @model PizzaApp.Pages.Admin.Pizzas.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Pizza management";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -15,16 +15,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Pizza[0].name)
+                @Html.DisplayNameFor(model => model.Pizza[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pizza[0].price)
+                @Html.DisplayNameFor(model => model.Pizza[0].Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pizza[0].vegetarian)
+                @Html.DisplayNameFor(model => model.Pizza[0].Vegetarian)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pizza[0].ingredients)
+                @Html.DisplayNameFor(model => model.Pizza[0].Ingredients)
             </th>
             <th></th>
         </tr>
@@ -33,21 +33,20 @@
 @foreach (var item in Model.Pizza) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.name)
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.price)
+                @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.vegetarian)
+                @Html.DisplayFor(modelItem => item.Vegetarian)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ingredients)
+                @Html.DisplayFor(modelItem => item.Ingredients)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.PizzaID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.PizzaID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.PizzaID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.PizzaId">Edit</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PizzaId">Delete</a>
             </td>
         </tr>
 }

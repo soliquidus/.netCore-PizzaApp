@@ -14,33 +14,33 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pizza.name)
+            @Html.DisplayNameFor(model => model.Pizza.Name)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pizza.name)
+            @Html.DisplayFor(model => model.Pizza.Name)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pizza.price)
+            @Html.DisplayNameFor(model => model.Pizza.Price)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pizza.price)
+            @Html.DisplayFor(model => model.Pizza.Price)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pizza.vegetarian)
+            @Html.DisplayNameFor(model => model.Pizza.Vegetarian)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pizza.vegetarian)
+            @Html.DisplayFor(model => model.Pizza.Vegetarian)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pizza.ingredients)
+            @Html.DisplayNameFor(model => model.Pizza.Ingredients)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Pizza.ingredients)
+            @Html.DisplayFor(model => model.Pizza.Ingredients)
         </dd>
     </dl>
     
     <form method="post">
-        <input type="hidden" asp-for="Pizza.PizzaID" />
+        <input type="hidden" asp-for="Pizza.PizzaId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-page="./Index">Back to List</a>
     </form>
