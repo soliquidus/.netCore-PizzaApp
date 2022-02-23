@@ -1,71 +1,86 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿body {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/img/menu_background.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: Arial, serif;
+    margin: 0px;
+    color: white;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+body.homePage {
+    background-image: url("/img/main_background.jpg");
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+a.homePage {
+    color: #FF5E00;
+    font-size: 25px;
+    display: block;
+    margin-top: 30px;
+    text-align: center;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+#small_logo {
+    margin-left: 35px;
+    margin-top: 25px;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+h1 {
+    color: white;
+    background-color: #FF5E00;
+    display: inline;
+    padding: 8px 22px
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+.menu_title {
+    margin-top: 65px;
+    margin-bottom: 50px;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+.menu_list {
+    margin-left: 50px;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+.menu_list_item {
+    font-size: 20px;
+    margin: 30px 0px;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+.menu_list_title {
+    font-weight: bold;
+}
+
+.menu_list_price {
+    color: #DD7835;
+    margin-left: 8px;
+}
+
+.menu_list_ingredients {
+    color: #C8C8C8;
+    font-size: 14px;
+    margin-top: 4px;
+    display: block;
+    width: 320px;
+}
+
+.menu_list_badge {
+    color: black;
+    background-color: #FF5E00;
+    font-size: 9px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 3px 8px;
+    display: inline-block;
+    margin-top: 6px;
 }

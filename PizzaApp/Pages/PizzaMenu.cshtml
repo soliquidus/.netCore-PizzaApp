@@ -1,0 +1,37 @@
+﻿@page
+@model PizzaApp.Pages.PizzaMenu
+@{
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="~/css/site.css"/>
+<title>Pizza Menu</title>
+</head>
+<body>
+<a asp-page="Index"><img src="~/img/main_logo_small.png" alt="" id="small_logo"></a>
+
+<div class="menu_title">
+    <h1>All our Pizzas</h1>
+</div>
+
+<div class="menu_list">
+    @foreach (var pizza in Model.Pizza)
+    {
+        <div class="menu_list_item">
+            <span class="menu_list_title">@pizza.Name</span>
+            <span class="menu_list_price">@($"{pizza.Price:0.00}")€</span>
+            <span class="menu_list_ingredients">@pizza.Ingredients</span>
+            @if(pizza.Vegetarian)
+            {
+                <span class="menu_list_badge">VEGETARIAN</span>
+            }
+        </div>
+    }
+</div>
+</body>
+</html>
